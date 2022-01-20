@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelPortal : MonoBehaviour
 {
-    public string gameName = "Gra";
+    public string gameName = "Game";
 
     
     private void OnCollisionEnter(Collision collision)
