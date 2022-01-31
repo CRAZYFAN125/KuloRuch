@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Szlam-Shader
+  m_Shader: {fileID: -6465566751694194690, guid: d4256fcae3703fe4f87c3c6f48d682be, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_c24c82c04e1b4cccbcfc7c24a36418f1:
+        m_Texture: {fileID: 8400000, guid: 2c2a113afc055d94e88dde0e2e513e1e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_441e0c96f954415886d4faea7fe1389e_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a46818a04ab72cd42b22e84efccd9271, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_8a13c2239df7471f8c576b20847d7bdb_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3212671f2902d7f47bb982566679a089, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_8b4c6f23eec44c918ae1ee3b0aa58628_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 1ed58aafc08d26c4f9ca16aa321baaea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_e91e5348e0014f349aa924d2c96e386c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: c8bbfec59e0265944a5bf78b47f99496, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_5a8edfac7e914ea4abba329c265c56fe: 0
+    - Boolean_71b0940d69c7499c9a3dec165c992b5e: 1
+    - Boolean_739452cd71354769b80e19bc3eba149d: 0
+    - Boolean_a14319f9ab20435988c8f1bbe420d397: 0
+    - Boolean_d907f6f3e36446859e7a9a34c1c158c7: 0
+    - Vector1_1f4dd5b5a417489f9add312bacac9005: 0.5
+    - Vector1_49a8a0d42f424c24b8249fce62e823bb: 1
+    - Vector1_963c2f8fd2f64cdabfe8d96a91018d53: 15
+    - Vector1_a908e59f1455410fb0ec95cad94ba7a0: 2
+    - Vector1_f0bc7f9cddf7493580beeb4bfd4b129c: 160
+    m_Colors:
+    - Color_6f029627c30c4f11874eab656b780273: {r: 0, g: 0.3867925, b: 0.05033471, a: 0}
+    - Vector2_983d06479baf46d68a3ef2e274b21b91: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

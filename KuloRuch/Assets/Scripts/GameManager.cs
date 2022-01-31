@@ -13,6 +13,13 @@ public class GameManager : MonoBehaviour
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
+    public void InputChangeCameras(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            ChangeCamera.instance.ChangeCameras();
+        }
+    }
     public void ResetLevelFromInput(InputAction.CallbackContext context)
     {
         if (context.performed)

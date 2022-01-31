@@ -1,9 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,13 +10,17 @@ public class MenuManager : MonoBehaviour
     public Text loadingText;
     public void LoadLevel(int index)
     {
-       AsyncOperation operation =  SceneManager.LoadSceneAsync(index);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         StartCoroutine(loadTextAsync(operation));
     }
     public void LoadLevel(string index)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
-        StartCoroutine(loadTextAsync(operation));
+        if (loadingText != null)
+        {
+            StartCoroutine(loadTextAsync(operation));
+        }
+
     }
     public void ExitGame()
     {
@@ -28,7 +31,7 @@ public class MenuManager : MonoBehaviour
     {
         while (!operation.isDone)
         {
-            loadingText.text = string.Format("Kulo Ruch- loading:{0}", Mathf.Floor(operation.progress/.9f));
+            loadingText.text = string.Format("Kulo Ruch- loading:{0}", Mathf.Floor(operation.progress / .9f));
             yield return null;
         }
     }

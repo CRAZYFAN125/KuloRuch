@@ -4940,9 +4940,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 5692680402049780711}
   animator: {fileID: 2066191962272396458}
-  Part: {fileID: 0}
+  Part: {fileID: 7894094980411370582, guid: e289e8fead31d5043a660fc60a0f707d, type: 3}
   spawnPoint: {fileID: 3365517691058482952}
   ChestLight: {fileID: 6277099525081699838}
+  itemPrefab: {fileID: 11400000, guid: 1730979ad56b37245a9e867080fa70b9, type: 2}
+  image: {fileID: 0}
+  text: {fileID: 0}
+  ButtonToDeactive: {fileID: 0}
 --- !u!1 &1612645475963803584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,7 +4971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612645475963803584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.358, y: 0, z: -0.034}
+  m_LocalPosition: {x: -0.667, y: -0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1904618956291372440}
