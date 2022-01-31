@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     [HideInInspector] public bool canBeUsed = true;
     public Rigidbody rb;
     public float Force = 5;
@@ -11,6 +12,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        if (Instance!=null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
     }
 
     public void InputChangeCameras(InputAction.CallbackContext callback)
@@ -18,6 +24,22 @@ public class GameManager : MonoBehaviour
         if (callback.performed)
         {
             ChangeCamera.instance.ChangeCameras();
+        }
+    }
+
+    public void InputHideOrShowCursor(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.performed)
+        {
+            switch (Cursor.lockState)
+            {
+                case CursorLockMode.None:
+                    Cursor.lockState = CursorLockMode.Locked;
+                    break;
+                case CursorLockMode.Locked:
+                    Cursor.lockState = CursorLockMode.None;
+                    break;
+            }
         }
     }
     public void ResetLevelFromInput(InputAction.CallbackContext context)

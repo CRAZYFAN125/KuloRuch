@@ -113,6 +113,46 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0df3bd9d-3f43-4040-bd1a-9cc04cda1774
     m_ActionName: Game/ChangeCam[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1228298780456182204}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: InputHideOrShowCursor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63694e93-dfb3-44d3-8b89-720a48cf1351
+    m_ActionName: Game/Hide/Show Cursor[/Mouse/middleButton,/XInputControllerWindows/leftStickPress]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 968b14d1-f3b3-4144-9956-d1e15257b30f
+    m_ActionName: Mech/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick,/XInputControllerWindows/dpad]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4e3c0dbb-4014-47a8-90c8-f37bfabc770f
+    m_ActionName: Mech/Rotate[/Keyboard/q,/Keyboard/e,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e3bb302c-ecd3-4831-a735-c804ffcfc1e0
+    m_ActionName: Mech/Jump[/Keyboard/w,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a0116c5-6713-492e-acd2-130ee0afb306
+    m_ActionName: Mech/ExitVehicle[/Keyboard/x,/Keyboard/rightShift,/XInputControllerWindows/leftStickPress]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 21bf40f0-cf71-4c0a-a938-453e0801577e
+    m_ActionName: Mech/ResetLv[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8bb5c6b8-fe0c-498e-8ee2-fad0f94e116a
+    m_ActionName: Mech/ChangeCam[/Keyboard/leftCtrl,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game

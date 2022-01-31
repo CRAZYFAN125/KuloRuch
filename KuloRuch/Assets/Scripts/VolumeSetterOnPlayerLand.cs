@@ -13,7 +13,7 @@ public class VolumeSetterOnPlayerLand : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Player")
+        if (Methods.CheckForPlayer(collision))
         {
             StartCoroutine(SetVolumeHeightTo1ASync());
         }

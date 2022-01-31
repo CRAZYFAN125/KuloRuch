@@ -6,7 +6,7 @@ class GameButtonScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Player")
+        if (Methods.CheckForPlayer(collision))
         {
             OnClickEvent.Click();
         }

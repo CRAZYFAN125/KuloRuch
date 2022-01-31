@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: CRAZYFAN125
   productName: KuloRuch
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 9969434cf39f9374db98457cd5ec3137, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0.2735849, b: 0.2573454, a: 1}
   m_ShowUnitySplashScreen: 1

@@ -1323,9 +1323,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa97a8eae958d2042bb030c209c92255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrier: {fileID: 1474482363203853159}
+  barriers:
+  - {fileID: 1474482363203853159}
   targetLight: 6
   DeactivationColor: {r: 0, g: 5.3403134, b: 0, a: 0}
+  isSwitch: 0
 --- !u!65 &1184933693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2276,6 +2278,10 @@ PrefabInstance:
     - target: {fileID: 7921884490723244655, guid: 34735ff242739974bba355552df1f4b5, type: 3}
       propertyPath: gameName
       value: Game5-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921884490723244655, guid: 34735ff242739974bba355552df1f4b5, type: 3}
+      propertyPath: unLockCursor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34735ff242739974bba355552df1f4b5, type: 3}
