@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool canBeUsed = true;
     public Rigidbody rb;
     public float Force = 5;
+    public List<Transform> ads;
 
     private void Awake()
     {
@@ -17,6 +19,12 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
         Instance = this;
+        ads = new List<Transform>();
+    }
+
+    private void FixedUpdate()
+    {
+        MoveAds();
     }
 
     public void InputChangeCameras(InputAction.CallbackContext callback)
@@ -64,5 +72,16 @@ public class GameManager : MonoBehaviour
             Vector2 vector2 = callback.ReadValue<Vector2>();
             rb.AddForce(vector2.x * Force, 0, vector2.y * Force, ForceMode.Force);
         }
+    }
+    private void MoveAds()
+    {
+        if (ads.Count > 0)
+        {
+            foreach (Transform item in ads)
+        {
+            item.position = rb.position;
+        }
+        }
+        
     }
 }

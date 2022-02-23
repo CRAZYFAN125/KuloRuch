@@ -394,7 +394,7 @@
                     "id": "5a0116c5-6713-492e-acd2-130ee0afb306",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -652,18 +652,7 @@
                     "name": "",
                     "id": "5a0bab90-6876-4cf4-ad97-6fc8412cc329",
                     "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyBoard",
-                    "action": "ExitVehicle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "87e8e482-040b-41a8-8d49-76bdda705427",
-                    "path": "<Keyboard>/rightShift",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "KeyBoard",
                     "action": "ExitVehicle",
