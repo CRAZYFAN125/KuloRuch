@@ -206,7 +206,7 @@
                     "id": "99f9dbb5-2505-4515-aca0-156f3101784b",
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.1,y=0.1),StickDeadzone(min=0.1,max=0.75)",
                     "groups": "Phone",
                     "action": "Move",
                     "isComposite": false,
@@ -554,7 +554,7 @@
                     "id": "93026c1c-6825-4a5c-a1f0-ad914a69ef6b",
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.1,y=0.1),StickDeadzone(min=0.1,max=0.75)",
                     "groups": "Phone",
                     "action": "Move",
                     "isComposite": false,
@@ -650,6 +650,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6b0acaf9-d986-4e64-b79a-4291a9382e27",
+                    "path": "<Touchscreen>/touch1/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Phone",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5a0bab90-6876-4cf4-ad97-6fc8412cc329",
                     "path": "<Keyboard>/x",
                     "interactions": "Hold",
@@ -666,6 +677,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
+                    "action": "ExitVehicle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e937d914-83b8-4b50-bc84-151c80b7166b",
+                    "path": "<Touchscreen>/touch2/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Phone",
                     "action": "ExitVehicle",
                     "isComposite": false,
                     "isPartOfComposite": false

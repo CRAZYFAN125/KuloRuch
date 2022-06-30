@@ -12,6 +12,9 @@ public class Robo : MonoBehaviour
     [SerializeField] private PlayerInput inputH;
     public float JumpForce = 2f;
     public float RotateSpeed = 2.5f;
+    public float waitingTime = 1f;
+    private float reaminTime;
+    public GameObject SpecialPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,8 @@ public class Robo : MonoBehaviour
         inputN = manager.GetComponent<PlayerInput>();
         rb = Player.GetComponent<Rigidbody>();
         inputH.enabled = false;
+        SpecialPanel.SetActive(false);
+        reaminTime = waitingTime;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -29,6 +34,7 @@ public class Robo : MonoBehaviour
             ActiveHelmet();
             GetComponent<Collider>().enabled = false;
             manager.ads.Add(transform);
+            SpecialPanel.SetActive(true);
         }
     }
     #region CoreFunctions
@@ -42,6 +48,17 @@ public class Robo : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Rotate(rotation*Time.fixedDeltaTime*RotateSpeed,Space.World);
+        if (waitingTime<=0f)
+        {
+            rotation.y = 0;
+        }
+        waitingTime-=Time.fixedDeltaTime;
+    }
+
+    public void Rotate(float y)
+    {
+        rotation.y = y/*+Time.fixedDeltaTime*/;
+        waitingTime = reaminTime;
     }
 
     #region Input data
@@ -54,15 +71,14 @@ public class Robo : MonoBehaviour
             rb.AddForce(vector, ForceMode.Impulse);
         }
     }
-    public void Rotate(InputAction.CallbackContext context)
+    public void RotateByInput(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            rotation.y = context.ReadValue<float>();
+            Rotate(context.ReadValue<float>());
         }
         else if (context.canceled)
         {
-
             rotation = Vector3.zero;
         }
     }
@@ -74,6 +90,7 @@ public class Robo : MonoBehaviour
             inputN.enabled = true;
             rb.AddForce(0,JumpForce*1.5f,0, ForceMode.Impulse);
             manager.ads.Remove(transform);
+            SpecialPanel.SetActive(false);
             Destroy(gameObject);
             return;
         }

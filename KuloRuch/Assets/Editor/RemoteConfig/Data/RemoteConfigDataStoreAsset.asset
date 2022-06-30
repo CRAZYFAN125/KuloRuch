@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"944409f2-03c7-406a-af04-2eea537a729e\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerRBForce\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"5179c0bd-1289-4fea-88ba-e70b45f6a322\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GieniekSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.5\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"944409f2-03c7-406a-af04-2eea537a729e\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerRBForce\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"5179c0bd-1289-4fea-88ba-e70b45f6a322\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GieniekSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.5\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"d84e584e-7400-430e-993f-fa702f7f3380\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"d0f6db4f-e590-4dd7-b55d-7ac8a492c8d9\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2022-04-08T17:04:50Z\",\r\n    \"updatedAt\":
+    \"2022-04-08T17:04:50Z\"\r\n  }\r\n]"
+  _rulesList: '[]'
+  _lastCachedRulesList: '[]'

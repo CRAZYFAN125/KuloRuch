@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Unity.RemoteConfig;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
@@ -10,9 +11,28 @@ public class GameManager : MonoBehaviour
     public Rigidbody rb;
     public float Force = 5;
     public List<Transform> ads;
+    [SerializeField] private float HowDeepToReset = -15f;
+    [SerializeField] private bool checkGieniekSpeed = false;
+    [HideInInspector] public float GSpeed { get; private set; } = 2f;
+
+    struct userAttributes
+    {
+
+    }
+    struct appAttributes
+    {
+
+    }
+
+    public class Save
+    {
+        public string Scene = "Game";
+    }
 
     private void Awake()
     {
+        ConfigManager.FetchCompleted += CheckForUpdate;
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         if (Instance!=null)
         {
@@ -22,9 +42,25 @@ public class GameManager : MonoBehaviour
         ads = new List<Transform>();
     }
 
+    void CheckForUpdate(ConfigResponse response)
+    {
+        if (response.requestOrigin == ConfigOrigin.Remote)
+        {
+            Force = ConfigManager.appConfig.GetFloat("PlayerRBForce");
+            if (checkGieniekSpeed)
+            {
+                GSpeed = ConfigManager.appConfig.GetFloat("GieniekSpeed");
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         MoveAds();
+        if (rb.position.y <= HowDeepToReset)
+        {
+            ResetLevel();
+        }
     }
 
     public void InputChangeCameras(InputAction.CallbackContext callback)
@@ -78,10 +114,26 @@ public class GameManager : MonoBehaviour
         if (ads.Count > 0)
         {
             foreach (Transform item in ads)
-        {
-            item.position = rb.position;
-        }
+            {
+                item.position = rb.position;
+            }
         }
         
+    }
+
+    private void OnApplicationQuit()
+    {
+        try
+        {
+            Save save = new Save();
+            save.Scene = SceneManager.GetActiveScene().name;
+            string data = JsonUtility.ToJson(save);
+            System.IO.File.WriteAllText(Application.persistentDataPath + "/save.cdat", data);
+            Debug.Log("Saved\n\""+data+$"\"\n{Application.persistentDataPath+"/save.cdat"}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
     }
 }

@@ -6,13 +6,23 @@ public class Winda : MonoBehaviour
 {
     public Transform[] TargetPoints;
     public float duration;
+    [SerializeField]private bool isRotating;
+    [Space]
     [SerializeField] private float roadRefresh = 0.15f;
     [SerializeField] private Vector3 objectOffset = new Vector3 (0f, .5f, 0f);
     private bool isDriving = false;
     [SerializeField]private int timeBetweenDrive = 5;
 
+    IWindaAdd[] additions;
+
     private void Start()
     {
+        if (TargetPoints.Length==0)
+        {
+            Debug.LogError("No points selected for: " + gameObject.name + $" at {transform.position.x}, {transform.position.y}, {transform.position.z}!");
+            Destroy(gameObject);
+            return;
+        }
         try
         {
             transform.position = TargetPoints[0].position;
@@ -21,11 +31,20 @@ public class Winda : MonoBehaviour
         {
             Debug.Log("Error while setting elevator");
         }
+
+        additions=GetComponents<IWindaAdd>();
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (Methods.CheckForPlayer(collision) && TargetPoints.Length != 0&&!isDriving)
         {
+            if (additions.Length!=0)
+            {
+                foreach (IWindaAdd item in additions)
+                {
+                    item.OnStart();
+                }
+            }
             StartCoroutine(Windowanie(collision.transform));
             isDriving = true;
         }
@@ -46,13 +65,31 @@ public class Winda : MonoBehaviour
                     @object.position = transform.position + objectOffset;
                     transform.position = Vector3.Lerp(TargetPoints[i - 1].position, TargetPoints[i].position, sek / duration);
                     @object.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    if (isRotating)
+                    {
+                        transform.rotation = Quaternion.Lerp(TargetPoints[i - 1].rotation, TargetPoints[i].rotation, sek / duration);
+                    }
                     yield return new WaitForSeconds(roadRefresh_);
                 }
                 i++;
                 Debug.Log(i);
+                if (additions.Length != 0)
+                {
+                    foreach (IWindaAdd item in additions)
+                    {
+                        item.OnUpdate();
+                    }
+                }
             }
             @object.GetComponent<Rigidbody>().useGravity = true;
             @object.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (additions.Length != 0)
+            {
+                foreach (IWindaAdd item in additions)
+                {
+                    item.OnStop();
+                }
+            }
             Debug.Log("We end with: "+i);
         }
         else if (Vector3.Distance(transform.position, TargetPoints[TargetPoints.Length-1].position)<=1f)

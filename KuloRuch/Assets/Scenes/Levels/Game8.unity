@@ -1256,6 +1256,7 @@ MonoBehaviour:
   game: {fileID: 4852880905382988222, guid: 15b9f33b41169da429c0ea7d6d93d622, type: 3}
   GizmosColor: {r: 1, g: 1, b: 1, a: 1}
   scale: {x: 1, y: 1, z: 0.2}
+  isRotating: 0
 --- !u!1 &440848580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   - {fileID: 2006392827}
   - {fileID: 430973572}
   duration: 18
+  isRotating: 0
   roadRefresh: 0.15
   objectOffset: {x: 0, y: 0.25, z: 0}
   timeBetweenDrive: 10
@@ -1930,6 +1932,10 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 310254590}
+    - target: {fileID: 1228298780456182204, guid: a9a63f295654bb44e94fae00bb136b04, type: 3}
+      propertyPath: HowDeepToReset
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 1228298780456182207, guid: a9a63f295654bb44e94fae00bb136b04, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4102,7 +4108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cf7fb740e3cc24db4bb8023eba8515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameName: Game
+  gameName: Game9-2
   unLockCursor: 0
 --- !u!1001 &1570686422
 PrefabInstance:
@@ -5034,6 +5040,7 @@ MonoBehaviour:
   game: {fileID: 4852880905382988222, guid: 15b9f33b41169da429c0ea7d6d93d622, type: 3}
   GizmosColor: {r: 1, g: 1, b: 1, a: 1}
   scale: {x: 1, y: 1, z: 0.2}
+  isRotating: 0
 --- !u!1001 &2013652588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5284,6 +5291,7 @@ MonoBehaviour:
   game: {fileID: 4852880905382988222, guid: 15b9f33b41169da429c0ea7d6d93d622, type: 3}
   GizmosColor: {r: 1, g: 1, b: 1, a: 1}
   scale: {x: 1, y: 1, z: 0.2}
+  isRotating: 0
 --- !u!1 &2105909029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8667156302395036844, guid: 0559d9feb0051ea4a8dd6aae97a349cc, type: 3}
