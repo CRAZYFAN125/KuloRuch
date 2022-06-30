@@ -1,8 +1,8 @@
+using System.Collections.Generic;
+using Unity.RemoteConfig;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using Unity.RemoteConfig;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         ConfigManager.FetchCompleted += CheckForUpdate;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        if (Instance!=null)
+        if (Instance != null)
         {
             Destroy(this);
         }
@@ -118,10 +118,11 @@ public class GameManager : MonoBehaviour
                 item.position = rb.position;
             }
         }
-        
+
     }
 
-    private void OnApplicationQuit()
+
+    public void SaveForExit()
     {
         try
         {
@@ -129,11 +130,131 @@ public class GameManager : MonoBehaviour
             save.Scene = SceneManager.GetActiveScene().name;
             string data = JsonUtility.ToJson(save);
             System.IO.File.WriteAllText(Application.persistentDataPath + "/save.cdat", data);
-            Debug.Log("Saved\n\""+data+$"\"\n{Application.persistentDataPath+"/save.cdat"}");
+            Debug.Log("Saved\n\"" + data + $"\"\n{Application.persistentDataPath + "/save.cdat"}");
         }
         catch (System.Exception e)
         {
             Debug.LogError(e.Message);
         }
+    }
+    public void SaveForExit(bool CloseAfterSave)
+    {
+        try
+        {
+            int x;
+            Save save;
+            if (System.IO.File.Exists(Application.persistentDataPath + "/save.cdat"))
+            {
+                save = JsonUtility.FromJson<Save>(System.IO.File.ReadAllText(Application.persistentDataPath + "/save.cdat"));
+                char[] ss = save.Scene.ToCharArray();
+                string xxxx = string.Empty;
+                foreach (char item in ss)
+                {
+                    switch (item)
+                    {
+                        case '1':
+                            xxxx += '1';
+                            break;
+                        case '2':
+                            xxxx += '2';
+                            break;
+                        case '3':
+                            xxxx += '3';
+                            break;
+                        case '4':
+                            xxxx += '4';
+                            break;
+                        case '5':
+                            xxxx += '5';
+                            break;
+                        case '6':
+                            xxxx += '6';
+                            break;
+                        case '7':
+                            xxxx += '7';
+                            break;
+                        case '8':
+                            xxxx += '8';
+                            break;
+                        case '9':
+                            xxxx += '9';
+                            break;
+                        case '0':
+                            xxxx += '0';
+                            break;
+                        default:
+                            xxxx += '0';
+                            break;
+                    }
+                }
+                x = int.Parse(xxxx);
+
+                xxxx = string.Empty;
+
+                foreach (char item in SceneManager.GetActiveScene().name.ToCharArray())
+                {
+                    switch (item)
+                    {
+                        case '1':
+                            xxxx += '1';
+                            break;
+                        case '2':
+                            xxxx += '2';
+                            break;
+                        case '3':
+                            xxxx += '3';
+                            break;
+                        case '4':
+                            xxxx += '4';
+                            break;
+                        case '5':
+                            xxxx += '5';
+                            break;
+                        case '6':
+                            xxxx += '6';
+                            break;
+                        case '7':
+                            xxxx += '7';
+                            break;
+                        case '8':
+                            xxxx += '8';
+                            break;
+                        case '9':
+                            xxxx += '9';
+                            break;
+                        case '0':
+                            xxxx += '0';
+                            break;
+                        default:
+                            xxxx += '0';
+                            break;
+                    }
+                }
+                int y = int.Parse(xxxx);
+                if (y>x)
+                {
+                    save.Scene = SceneManager.GetActiveScene().name;
+                }
+            }
+            else
+            {
+                save = new Save();
+                save.Scene = SceneManager.GetActiveScene().name;
+            }
+            string data = JsonUtility.ToJson(save);
+            System.IO.File.WriteAllText(Application.persistentDataPath + "/save.cdat", data);
+            Debug.Log("Saved\n\"" + data + $"\"\n{Application.persistentDataPath + "/save.cdat"}");
+            if (CloseAfterSave)
+                Application.Quit();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveForExit();
     }
 }

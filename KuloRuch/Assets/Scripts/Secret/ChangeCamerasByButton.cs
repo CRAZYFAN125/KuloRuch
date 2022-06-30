@@ -42,18 +42,7 @@ namespace Crazy.CameraCode {
         }
         public void CloseGame()
         {
-            try
-            {
-                GameManager.Save save = new GameManager.Save();
-                save.Scene = SceneManager.GetActiveScene().name;
-                string data = JsonUtility.ToJson(save);
-                System.IO.File.WriteAllText(Application.persistentDataPath + "/save.cdat", data);
-                Debug.Log("Saved\n\"" + data + $"\"\n{Application.persistentDataPath + "/save.cdat"}");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError(e.Message);
-            }
+            GameManager.Instance.SaveForExit(true);
         }
     } 
 }
