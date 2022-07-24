@@ -4689,6 +4689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Podloga4
       objectReference: {fileID: 0}
+    - target: {fileID: 7921884490723244655, guid: 34735ff242739974bba355552df1f4b5, type: 3}
+      propertyPath: gameName
+      value: Game15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34735ff242739974bba355552df1f4b5, type: 3}
 --- !u!1001 &1689183579

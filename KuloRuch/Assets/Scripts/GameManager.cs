@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using Unity.RemoteConfig;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +15,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float HowDeepToReset = -15f;
     [SerializeField] private bool checkGieniekSpeed = false;
     [HideInInspector] public float GSpeed { get; private set; } = 2f;
+
+    [Header("Gamerules")]
+    [SerializeField] private GameObject[] /*gamerule_*/NonWindas;
+
+    private void Start()
+    {
+        if (File.Exists(Application.dataPath+"/.../gamerule.dat"))
+        {
+            string[] rulesOverwrites = File.ReadAllLines(Application.dataPath + "/.../gamerule.overwrite");
+            foreach (string item in rulesOverwrites)
+            {
+                if (item == "-NonWindas-"&&NonWindas.Length>0)
+                {
+                    foreach (GameObject @object in NonWindas)
+                    {
+                        @object.SetActive(true);
+                    }
+                    Debug.LogWarning($"Rule {item} has been activated, all elevators will be changed!\nIf you don't want it just delete rule at {item} in \"{Application.dataPath+ "/.../gamerule.overwrite"}\".");
+                }
+            }
+        }
+    }
 
     struct userAttributes
     {

@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
                 g.GetComponent<Button>().onClick.RemoveAllListeners();
                 g.GetComponent<Button>().onClick.AddListener(() =>
                 {
-                    AsyncOperation operation = SceneManager.LoadSceneAsync(ii);
+                    AsyncOperation operation = SceneManager.LoadSceneAsync(ii+2);
                 });
                 if (i < x)
                 {
