@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8aa840de9dc010d4fa23bb86b5155c44, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -212,6 +212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 10
+  tags:
+  - Player
 --- !u!65 &43774055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Podloga4
       objectReference: {fileID: 0}
+    - target: {fileID: 7921884490723244655, guid: 34735ff242739974bba355552df1f4b5, type: 3}
+      propertyPath: gameName
+      value: Game16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34735ff242739974bba355552df1f4b5, type: 3}
 --- !u!1 &393512883 stripped
@@ -326,6 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 10
+  tags:
+  - Player
 --- !u!65 &393512886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -485,6 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 40
+  tags:
+  - Player
 --- !u!65 &548623084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -680,6 +690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 10
+  tags:
+  - Player
 --- !u!65 &737733991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -782,6 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 20
+  tags:
+  - Player
 --- !u!65 &786327183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1072,6 +1086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 20
+  tags:
+  - Player
 --- !u!65 &1388084829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1224,6 +1240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6386952738188799895, guid: 0559d9feb0051ea4a8dd6aae97a349cc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6959610795683487595, guid: 0559d9feb0051ea4a8dd6aae97a349cc, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1302,6 +1322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1074493664}
   force: 20
+  tags:
+  - Player
 --- !u!65 &1715572058
 BoxCollider:
   m_ObjectHideFlags: 0

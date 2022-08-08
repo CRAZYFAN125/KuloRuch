@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 34a85bac799635247896ef75122e5173, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3040,7 +3040,9 @@ MonoBehaviour:
   - {fileID: 1394966272}
   - {fileID: 1315082315}
   duration: 5
+  CanGoBack: 1
   isRotating: 0
+  isTakingPlayer: 1
   roadRefresh: 0.15
   objectOffset: {x: 0, y: 0.5, z: 0}
   timeBetweenDrive: 5

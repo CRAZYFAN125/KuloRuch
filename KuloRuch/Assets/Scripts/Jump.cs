@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField]Rigidbody rb;
+    [SerializeField] Rigidbody rb;
     [SerializeField] float force = 20f;
+    [SerializeField] string[] tags = { "Player" };
     private void Start()
     {
-        rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        //rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (Methods.CheckForPlayer(collision))
+        foreach (string item in tags)
         {
-            rb.velocity = Vector3.zero;
-            Vector3 x = transform.forward * force;
-
-            rb.AddForce(x,ForceMode.VelocityChange);
+            if (collision.gameObject.CompareTag(item))
+            {
+                rb = collision.gameObject.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                Vector3 x = transform.forward * force;
+    
+                rb.AddForce(x,ForceMode.VelocityChange);
+                rb = null;
+            }
         }
+        
         
     }
 
@@ -26,7 +33,8 @@ public class Jump : MonoBehaviour
     {
         Vector3 x = transform.forward * force;
         x.y = 0;
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position,transform.forward*5);
         Gizmos.color = Color.yellow; 
         if (rb!=null)
         {

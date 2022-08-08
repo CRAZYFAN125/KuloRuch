@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6adc112d68f4a784e886725a290f3cc1, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -639,7 +639,9 @@ MonoBehaviour:
   - {fileID: 756954853}
   - {fileID: 321594050}
   duration: 10
+  CanGoBack: 1
   isRotating: 0
+  isTakingPlayer: 1
   roadRefresh: 0.05
   objectOffset: {x: 0, y: 0.5, z: 0}
   timeBetweenDrive: 2
@@ -1111,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7879446787124812119, guid: d36a23de1cf8b5f4ea47f05d959e8d30, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7879446787124812119, guid: d36a23de1cf8b5f4ea47f05d959e8d30, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2004,7 +2006,7 @@ Transform:
   - {fileID: 465602243}
   - {fileID: 457511503}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304428481
 GameObject:

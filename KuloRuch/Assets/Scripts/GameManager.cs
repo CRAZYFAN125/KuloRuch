@@ -13,26 +13,47 @@ public class GameManager : MonoBehaviour
     public float Force = 5;
     public List<Transform> ads;
     [SerializeField] private float HowDeepToReset = -15f;
+    [HideInInspector] public float Deep;
     [SerializeField] private bool checkGieniekSpeed = false;
+    [SerializeField] float MinMaxPlayerSpeed = 50f;
     [HideInInspector] public float GSpeed { get; private set; } = 2f;
 
     [Header("Gamerules")]
     [SerializeField] private GameObject[] /*gamerule_*/NonWindas;
-
+    string GameruleFilePath = "/../gamerule.overwrite";
     private void Start()
     {
-        if (File.Exists(Application.dataPath+"/.../gamerule.dat"))
+        GameruleFilePath = Application.dataPath + GameruleFilePath;
+
+        if (File.Exists(GameruleFilePath))
         {
-            string[] rulesOverwrites = File.ReadAllLines(Application.dataPath + "/.../gamerule.overwrite");
+            string[] rulesOverwrites = File.ReadAllLines(GameruleFilePath);
+            if (rulesOverwrites.Length==0)
+            {
+                Debug.LogWarning($"There is empty gamerules file in {GameruleFilePath}");
+                return;
+            }
             foreach (string item in rulesOverwrites)
             {
-                if (item == "-NonWindas-"&&NonWindas.Length>0)
+                if (item == "-NonWindas-" && NonWindas.Length > 0)
                 {
                     foreach (GameObject @object in NonWindas)
                     {
                         @object.SetActive(true);
                     }
-                    Debug.LogWarning($"Rule {item} has been activated, all elevators will be changed!\nIf you don't want it just delete rule at {item} in \"{Application.dataPath+ "/.../gamerule.overwrite"}\".");
+                    Debug.LogWarning($"Rule {item} has been activated, all elevators will be changed!\nIf you don't want it just delete rule at {item} in \"{GameruleFilePath}\".");
+                }
+                if (item == "-NonWindas-" && NonWindas.Length == 0)
+                {
+                    Winda[] Windas = FindObjectsOfType<Winda>();
+                    if (Windas.Length != 0)
+                    {
+                        foreach (Winda winda in Windas)
+                        {
+                            winda.StartCoroutine(winda.Windowanie());
+                        }
+                    }
+                    Debug.LogWarning($"Rule {item} has been activated, all elevators will be changed!\nIf you don't want it just delete rule at {item} in \"{GameruleFilePath}\".");
                 }
             }
         }
@@ -63,6 +84,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         ads = new List<Transform>();
+        Deep = HowDeepToReset;
     }
 
     void CheckForUpdate(ConfigResponse response)
@@ -70,6 +92,7 @@ public class GameManager : MonoBehaviour
         if (response.requestOrigin == ConfigOrigin.Remote)
         {
             Force = ConfigManager.appConfig.GetFloat("PlayerRBForce");
+            MinMaxPlayerSpeed = ConfigManager.appConfig.GetFloat("MinMaxPlayerSpeed");
             if (checkGieniekSpeed)
             {
                 GSpeed = ConfigManager.appConfig.GetFloat("GieniekSpeed");
@@ -80,6 +103,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         MoveAds();
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -MinMaxPlayerSpeed, MinMaxPlayerSpeed), Mathf.Clamp(rb.velocity.y, -MinMaxPlayerSpeed, MinMaxPlayerSpeed), Mathf.Clamp(rb.velocity.z, -MinMaxPlayerSpeed, MinMaxPlayerSpeed));
         if (rb.position.y <= HowDeepToReset)
         {
             ResetLevel();
@@ -254,7 +278,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 int y = int.Parse(xxxx);
-                if (y>x)
+                if (y > x)
                 {
                     save.Scene = SceneManager.GetActiveScene().name;
                 }

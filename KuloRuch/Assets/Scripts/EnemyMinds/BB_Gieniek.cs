@@ -10,12 +10,15 @@ namespace Crazy.Gieniek.EnemyMind
         [SerializeField] Transform partToRotate;
         [SerializeField] float rotationSpeed;
         [SerializeField] float speed = 2f;
+        [SerializeField] float MinMaxSpeed = 25;
+        float deep;
         // Use this for initialization
         void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody>();
             speed = GameManager.Instance.GSpeed;
+            deep = GameManager.Instance.Deep * 2;
         }
 
         // Update is called once per frame
@@ -28,6 +31,12 @@ namespace Crazy.Gieniek.EnemyMind
 
             
             rb.MovePosition(transform.position + (dir * Time.deltaTime * speed));
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -MinMaxSpeed, MinMaxSpeed), Mathf.Clamp(rb.velocity.y, -MinMaxSpeed, MinMaxSpeed), Mathf.Clamp(rb.velocity.z, -MinMaxSpeed, MinMaxSpeed));
+            if (transform.position.y < deep)
+            {
+                transform.position = new Vector3(transform.position.x,-deep*2,transform.position.z);
+                rb.velocity = Vector3.zero;
+            }
         }
         private void OnCollisionEnter(Collision collision)
         {

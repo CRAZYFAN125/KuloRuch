@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Game15.unity
     guid: 3d1163a10689c54429eacd1bdac7ac7a
   - enabled: 1
+    path: Assets/Scenes/Levels/Game16.unity
+    guid: 49f24365f11887c49aef9e10ea6af850
+  - enabled: 1
     path: Assets/Scenes/A_Sad_Scene.unity
     guid: b7283327e66bca14d96844181cd7ac51
   - enabled: 1

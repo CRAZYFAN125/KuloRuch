@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"944409f2-03c7-406a-af04-2eea537a729e\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"7d81c057-c95e-4f35-8168-d5f0f2c9cb19\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerRBForce\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"5179c0bd-1289-4fea-88ba-e70b45f6a322\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d1475116-4948-47c8-a133-b791f897b84f\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GieniekSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    1.5\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"944409f2-03c7-406a-af04-2eea537a729e\"\r\n   
+    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e2991840-1f09-4e1a-af72-99fca1c62fcc\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"MinMaxPlayerSpeed\",\r\n      \"value\":
+    75.0,\r\n      \"type\": \"float\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"7d81c057-c95e-4f35-8168-d5f0f2c9cb19\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerRBForce\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"5179c0bd-1289-4fea-88ba-e70b45f6a322\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d1475116-4948-47c8-a133-b791f897b84f\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GieniekSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    1.5\r\n    }\r\n  }\r\n]"
+    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e2991840-1f09-4e1a-af72-99fca1c62fcc\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"MinMaxPlayerSpeed\",\r\n      \"value\":
+    75.0,\r\n      \"type\": \"float\"\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"d84e584e-7400-430e-993f-fa702f7f3380\",\r\n   
     \"name\": \"production\",\r\n    \"id\": \"d0f6db4f-e590-4dd7-b55d-7ac8a492c8d9\",\r\n   
     \"isDefault\": true,\r\n    \"createdAt\": \"2022-04-08T17:04:50Z\",\r\n    \"updatedAt\":

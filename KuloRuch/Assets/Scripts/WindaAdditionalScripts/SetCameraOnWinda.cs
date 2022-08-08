@@ -6,9 +6,9 @@ namespace Crazy.WindaAdds
     [RequireComponent(typeof(Winda))]
     public class SetCameraOnWinda : MonoBehaviour, IWindaAdd
     {
-        public enum CameraChangeOn
+        public enum CameraChangeOn:short
         {
-            Start,
+            Start = 1,
             Stop,
             StartAndStop
         }

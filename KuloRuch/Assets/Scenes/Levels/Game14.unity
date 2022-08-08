@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 598c53862e1c4ae4aab4be9cfc42df3b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1718,6 +1718,10 @@ PrefabInstance:
     - target: {fileID: 1228298780456182201, guid: a9a63f295654bb44e94fae00bb136b04, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228298780456182204, guid: a9a63f295654bb44e94fae00bb136b04, type: 3}
+      propertyPath: checkGieniekSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1228298780456182207, guid: a9a63f295654bb44e94fae00bb136b04, type: 3}
       propertyPath: m_RootOrder
